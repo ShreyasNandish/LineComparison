@@ -31,6 +31,16 @@ public class LineComparsion {
             System.out.println("Both lines are equal");
         else
             System.out.println("Both lines are not equal");
+
+                if (Double.compare(res1, res2) == 0) {
+                        System.out.println(("Both lines are equal"));
+                } else if (Double.compare(res1, res2) < 0) {
+                        System.out.println(("Line 1 is less than Line 2"));
+                } else if (Double.compare(res1, res2) > 0) {
+                        System.out.println(("Line 1 is more than Line 2 "));
+                } else {
+                        System.out.println("Both are not equal");
+                }
         }
 
 
