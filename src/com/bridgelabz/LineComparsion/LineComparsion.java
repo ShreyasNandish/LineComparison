@@ -3,50 +3,38 @@ package com.bridgelabz.LineComparsion;
 import java.util.Scanner;
 
 public class LineComparsion {
-        public static void calculatelength(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter x1 : ");
-        int x1 = sc.nextInt();
-        System.out.println("Enter y1 : ");
-        int y1 = sc.nextInt();
-        System.out.println("Enter x2 : ");
-        int x2 = sc.nextInt();
-        System.out.println("Enter y2 : ");
-        int y2 = sc.nextInt();
-        System.out.println("Enter x3 : ");
-        int x3 = sc.nextInt();
-        System.out.println("Enter y3 : ");
-        int y3 = sc.nextInt();
-        System.out.println("Enter x4 : ");
-        int x4 = sc.nextInt();
-        System.out.println("Enter y4 : ");
-        int y4 = sc.nextInt();
-
-        double res1=(float)Math.sqrt(Math.pow(x2-x1,2)+Math.pow(y2-y1,2)*1.0);
-        double res2=(float)Math.sqrt(Math.pow(x4-x3,2)+Math.pow(y4-y3,2)*1.0);
-        System.out.println("Length of line is :"+res1);
-        System.out.println("Length of line is :"+res2);
-
-        if(res1==res2)
-            System.out.println("Both lines are equal");
-        else
-            System.out.println("Both lines are not equal");
-
-                if (Double.compare(res1, res2) == 0) {
-                        System.out.println(("Both lines are equal"));
-                } else if (Double.compare(res1, res2) < 0) {
-                        System.out.println(("Line 1 is less than Line 2"));
-                } else if (Double.compare(res1, res2) > 0) {
-                        System.out.println(("Line 1 is more than Line 2 "));
-                } else {
-                        System.out.println("Both are not equal");
-                }
-        }
-
 
     public static void main(String[] args) {
         System.out.println("Welcome to Line Comparison program ");
-        calculatelength();
+        Points p1=new Points();
+        Points p2=new Points();
+        Length l1=new Length();
+        Length l2=new Length();
+
+        p1.getPoints();
+        //calculatelength();
+        Double L1=l1.length(p1.getX(),p2.getX(),p1.getY(), p2.getY());
+        System.out.println("Length of Line 1 is :"+L1);
+
+        System.out.println("\n****************");
+        System.out.println("\n");
+        p2.getPoints();
+        //calculatelength();
+        Double L2=l1.length(p1.getX(),p2.getX(),p1.getY(), p2.getY());
+        System.out.println("Length of Line 2 is :"+L2);
+
+        if(L1.equals(L2))
+        {
+            System.out.println("Lines are equal ");
+        }
+        else if(L1.compareTo(L2)>0)
+        {
+            System.out.println("Line 1 is greater than Line 2 ");
+        }
+        else
+        {
+            System.out.println("Line 2 is greater than Line 1");
+        }
 
     }
 }
